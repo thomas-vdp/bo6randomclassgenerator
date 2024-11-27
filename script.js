@@ -9,7 +9,7 @@ const primaryWeapons = [
             Underbarrel: ["Vertical Foregrip", "Lightweight Foregrip", "Marksman Foregrip", "Precision Foregrip", "Ranger Foregrip", "Launcher - Standard", "Launcher - Smoke", "Launcher - High Explosive", "Launcher - Drill Charge"],
             Magazine: ["Extended Mag I", "Fast Mag I", "Extended Mag II", "Flip Mag", "Extended Mag III", "Fast Mag II"],
             "Rear Grip": ["Quickdraw Grip", "Assault Grip", "Commando Grip", "Ergonomic Grip", "CQB Grip"],
-            Stock: ["Light Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock"],
+            Stock: ["Light Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock", "Buffer Weight Stock"],
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.56 NATO Overpressured", "Recoil Springs", "5.56 NATO FMJ"]
         },
@@ -105,6 +105,21 @@ const primaryWeapons = [
         unlockLevel: 55
     },
     {
+        name: "KRIG C",
+        attachments: {
+            Optic: ["Remuda Mini Reflex", "Otero Micro Dot", "Kepler Microflex", "Merlin Mini", "PrismaTech Reflex", "Volzhskiy Reflex", "Merlin Reflex", "Redwell Reflex", "Dobrych MF Reflex", "Accu-Spot Reflex", "K&S Red Dot", "Kepler Red Dot", "Otero Red Dot", "OM3 '92 Holo", "Pinpoint Holoscout", "Accu-Spot Ultra Holo", "Jason Armory 2x", "Willis 3x", "PrismaTech 4x", "Dobrych 4x", "Pinpoint Hybrid", "PrismaPoint Hybrid", "Hawker Hybrid", "R&K Multizoom", "Blandwell 7x Scope", "Otero Thermal 2x"],
+            Muzzle: ["Suppressor", "Compensator", "Muzzle Brake", "Ported Compensator"],
+            Barrel: ["Gain-Twist Barrel", "Long Barrel", "Reinforced Barrel", "Short Barrel", "CHF Barrel"],
+            Underbarrel: ["Vertical Foregrip", "Lightweight Foregrip", "Marksman Foregrip", "Precision Foregrip", "Ranger Foregrip", "Launcher - Standard", "Launcher - Smoke", "Launcher - High Explosive", "Launcher - Drill Charge"],
+            Magazine: ["Extended Mag I", "Extended Mag II", "Flip Mag", "Fast Mag II"],
+            "Rear Grip": ["Quickdraw Grip", "Assault Grip", "Commando Grip", "Ergonomic Grip", "CQB Grip"],
+            Stock: ["No Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock"],
+            Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
+            "Fire Mods": ["Rapid Fire", "5.56 NATO Overpressured", "Recoil Springs", "5.56 NATO FMJ"]
+        },
+        unlockLevel: 1
+    },
+    {
         name: "C9",
         attachments: {
             Optic: ["Remuda Mini Reflex", "Otero Micro Dot", "Kepler Microflex", "Merlin Mini", "PrismaTech Reflex", "Volzhskiy Reflex", "Merlin Reflex", "Redwell Reflex", "Dobrych MF Reflex", "Accu-Spot Reflex", "K&S Red Dot", "Kepler Red Dot", "Otero Red Dot", "OM3 '92 Holo", "Pinpoint Holoscout", "Accu-Spot Ultra Holo", "Jason Armory 2x", "Willis 3x", "PrismaTech 4x", "K&S Thermal Holo", "Pinpoint Hybrid", "R&K Multizoom", "VMF Variable Scope", "Otero Thermal 2x"],
@@ -165,7 +180,7 @@ const primaryWeapons = [
         unlockLevel: 37
     },
     {
-        name: "Jackal PDW",
+        name: "JACKAL PDW",
         attachments: {
             Optic: ["Remuda Mini Reflex", "Otero Micro Dot", "Kepler Microflex", "Merlin Mini", "PrismaTech Reflex", "Volzhskiy Reflex", "Merlin Reflex", "Redwell Reflex", "Dobrych MF Reflex", "Accu-Spot Reflex", "K&S Red Dot", "Kepler Red Dot", "Otero Red Dot", "OM3 '92 Holo", "Pinpoint Holoscout", "Accu-Spot Ultra Holo", "Jason Armory 2x", "Willis 3x", "PrismaTech 4x", "K&S Thermal Holo", "Pinpoint Hybrid", "R&K Multizoom", "VMF Variable Scope", "Otero Thermal 2x"],
             Muzzle: ["Suppressor", "Compensator", "Muzzle Brake", "Ported Compensator"],
@@ -193,6 +208,21 @@ const primaryWeapons = [
             "Fire Mods": ["Rapid Fire", "9x19mm Parabellum Overpressured", "Recoil Springs", "9mm Parabellum FMJ"]
         },
         unlockLevel: 49
+    },
+    {
+        name: "SAUG",
+        attachments: {
+            Optic: ["Remuda Mini Reflex", "Otero Micro Dot", "Kepler Microflex", "Merlin Mini", "PrismaTech Reflex", "Volzhskiy Reflex", "Merlin Reflex", "Redwell Reflex", "Dobrych MF Reflex", "Accu-Spot Reflex", "K&S Red Dot", "Kepler Red Dot", "Otero Red Dot", "OM3 '92 Holo", "Pinpoint Holoscout", "Accu-Spot Ultra Holo", "Jason Armory 2x", "Willis 3x", "PrismaTech 4x", "K&S Thermal Holo", "Pinpoint Hybrid", "R&K Multizoom", "VMF Variable Scope", "Otero Thermal 2x"],
+            Muzzle: ["Suppressor", "Compensator", "Muzzle Brake", "Ported Compensator"],
+            Barrel: ["Gain-Twist Barrel", "Long Barrel", "Reinforced Barrel", "Short Barrel", "CHF Barrel"],
+            Underbarrel: ["Vertical Foregrip", "Lightweight Foregrip", "Marksman Foregrip", "Precision Foregrip", "Ranger Foregrip"],
+            Magazine: ["Extended Mag I", "Flip Mag", "Extended Mag II", "Fast Mag II"],
+            "Rear Grip": ["Quickdraw Grip", "Assault Grip", "Commando Grip", "Ergonomic Grip", "CQB Grip"],
+            Stock: ["Light Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock", "Akimbo Saug"],
+            Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
+            "Fire Mods": ["Rapid Fire", "9x19mm Parabellum Overpressured", "Recoil Springs", "9mm Parabellum FMJ"]
+        },
+        unlockLevel: 1
     },
     {
         name: "Marine SP",
@@ -246,7 +276,7 @@ const primaryWeapons = [
             Underbarrel: ["Vertical Foregrip", "Lightweight Foregrip", "Marksman Foregrip", "Precision Foregrip", "Ranger Foregrip", "Crossbar"],
             Magazine: ["Extended Mag I", "Fast Mag I", "Extended Mag II", "Fast Mag II"],
             "Rear Grip": ["Quickdraw Grip", "Assault Grip", "Commando Grip", "Ergonomic Grip", "CQB Grip"],
-            Stock: ["Light Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock"],
+            Stock: ["Light Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock", "Buffer Weight Stock"],
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62 NATO Overpressured", "Recoil Springs", "7.62 NATO FMJ"]
         },
@@ -321,7 +351,7 @@ const primaryWeapons = [
             Underbarrel: ["Weighted Handguard", "Lightweight Handguard", "Marksman Handguard", "Precision Handguard", "Ranger Handguard"],
             Magazine: ["Extended Mag I", "Fast Mag I", "Extended Mag II", "Flip Mag", "Fast Mag II"],
             "Rear Grip": ["Quickdraw Grip", "Assault Grip", "Commando Grip", "Ergonomic Grip", "CQB Grip"],
-            Stock: ["Light Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock"],
+            Stock: ["Light Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock", "Buffer Weight Stock"],
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62 NATO Overpressured", "Recoil Springs", "7.62 NATO FMJ"]
         },
@@ -439,7 +469,8 @@ const secondaryWeapons = [
 // Melee Weapons
 const meleeWeapons = [
     { name: "Knife", unlockLevel: 1 },
-    { name: "Baseball Bat", unlockLevel: 52 }
+    { name: "Baseball Bat", unlockLevel: 52 },
+    { name: "Power Drill", unlockLevel: 1 }
 ];
 
 // Wildcards
@@ -509,6 +540,7 @@ const perks2 = [
     { name: "Engineer", unlockLevel: 1 },
     { name: "Tracker", unlockLevel: 29 },
     { name: "Forward Intel", unlockLevel: 47 },
+    { name: "Shadow", unlockLevel: 1 },
     { name: "Dispatcher", unlockLevel: 11 },
     { name: "Fast Hands", unlockLevel: 38 }
 ];
@@ -777,7 +809,12 @@ function generateClass() {
 
     // Select attachments for primary weapon
     const maxAttachments = Math.min(attachmentCount, Object.keys(primaryWeapon.attachments).length);
-    const primaryAttachments = selectAttachments(primaryWeapon, maxAttachments);
+    let primaryAttachments = [];
+    if (primaryWeapon.name === "SAUG") {
+        primaryAttachments = selectSecondaryAttachments(primaryWeapon, maxAttachments)
+    } else {
+        primaryAttachments = selectAttachments(primaryWeapon, maxAttachments);
+    }
 
     // Select secondary weapon
     const secondaryWeapon = getRandomItem(secondaryWeaponOptions);
@@ -790,7 +827,7 @@ function generateClass() {
             5,
             Object.keys(secondaryWeapon.attachments).length
         );
-        if (wildcard.name === "Overkill") {
+        if (wildcard.name === "Overkill" && secondaryWeaponName !== "SAUG") {
             secondaryAttachments = selectAttachments(secondaryWeapon, maxSecondaryAttachments)
         } else {
             secondaryAttachments = selectSecondaryAttachments(secondaryWeapon, maxSecondaryAttachments);
@@ -856,3 +893,25 @@ function generateClass() {
 }
 
 document.getElementById('generateBtn').addEventListener('click', generateClass);
+
+// Sidebar Functionality
+const newsButton = document.getElementById('newsButton');
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const closeSidebar = document.getElementById('closeSidebar');
+
+function openSidebar() {
+    newsButton.classList.add('hidden');
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.remove('hidden');
+}
+
+function closeSidebarFunc() {
+    newsButton.classList.remove('hidden');
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.add('hidden');
+}
+
+newsButton.addEventListener('click', openSidebar);
+closeSidebar.addEventListener('click', closeSidebarFunc);
+sidebarOverlay.addEventListener('click', closeSidebarFunc);
