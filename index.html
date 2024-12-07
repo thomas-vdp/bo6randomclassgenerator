@@ -22,7 +22,7 @@
         <div class="header-content">
             <!-- Logo with link to home page -->
             <div class="logo">
-                <a href="index.html">
+                <a href="./">
                     <img src="Images/logo.png" alt="Call of Duty Black Ops 6 Logo">
                 </a>
             </div>
@@ -33,8 +33,8 @@
             <!-- Navigation -->
             <nav>
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="./"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="./contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,17 +47,18 @@
         <button id="closeSidebar" aria-label="Close Sidebar">&times;</button>
         <h2 class="section-heading">News & Updates</h2>
         <div class="sidebar-content">
-            <h3>Changelog</h3>
-            <ul>
-                <li>November 19, 2024: Launch of Random Class Generator!</li>
-                <li>November 27, 2024: v2.0 is deployed with new styling and season 1 weapons.</li>
-            </ul>
-            <hr class="sidebar-divider">
             <h3>Upcoming Features</h3>
             <ul>
                 <li>Exclude weapon classes</li>
                 <li>Accessibility features</li>
                 <li>Share with your friends</li>
+            </ul>
+            <hr class="sidebar-divider">
+            <h3>Changelog</h3>
+            <ul>
+                <li>December 7, 2024: Small bug fixes</li>
+                <li>November 27, 2024: v2.0 is deployed with new styling and season 1 weapons.</li>
+                <li>November 19, 2024: Launch of Random Class Generator!</li>
             </ul>
             <hr class="sidebar-divider">
         </div>
@@ -95,11 +96,11 @@
                 <div id="playerLevelFields" class="nested-form-group hidden">
                     <div class="form-group">
                         <label for="prestigeLevel">Prestige Level:</label>
-                        <input type="number" id="prestigeLevel" name="prestigeLevel" min="0" max="10">
+                        <input type="number" id="prestigeLevel" name="prestigeLevel" min="0" max="10" placeholder="Default = 0">
                     </div>
                     <div class="form-group">
                         <label for="playerLevel">Player Level:</label>
-                        <input type="number" id="playerLevel" name="playerLevel" min="1" max="55">
+                        <input type="number" id="playerLevel" name="playerLevel" min="1" max="55" placeholder="Default = 1">
                     </div>
                 </div>
                 <!-- Consider Permanent Unlocks -->

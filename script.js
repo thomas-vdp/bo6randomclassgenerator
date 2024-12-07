@@ -594,19 +594,25 @@ function getRandomItems(array, numItems) {
 
 function selectAttachments(weapon, attachmentCount) {
     const categories = Object.keys(weapon.attachments);
-    let selectedAttachments = [];
+    let chosen = {};
     let availableCategories = [...categories];
 
-    // Shuffle the categories to ensure randomness
-    availableCategories.sort(() => 0.5 - Math.random());
-
-    for (let i = 0; i < attachmentCount && availableCategories.length > 0; i++) {
+    while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
         // Select a random category
-        const category = availableCategories.pop();
+        const randomIndex = Math.floor(Math.random() * availableCategories.length);
+        const category = availableCategories[randomIndex];
         // Select a random attachment from that category
         const attachmentsInCategory = weapon.attachments[category];
         const attachment = getRandomItem(attachmentsInCategory);
-        selectedAttachments.push(`${category}: ${attachment}`);
+        chosen[category] = attachment;
+        availableCategories.splice(randomIndex, 1);
+    }
+
+    let selectedAttachments = [];
+    for (let cat of categories) {
+        if (chosen[cat]) {
+            selectedAttachments.push(`${cat}: ${chosen[cat]}`);
+        }
     }
 
     return selectedAttachments;
@@ -614,13 +620,13 @@ function selectAttachments(weapon, attachmentCount) {
 
 function selectSecondaryAttachments(weapon, attachmentCount) {
     let categories = Object.keys(weapon.attachments);
-    let selectedAttachments = {};
+    let chosen = {};
     let availableCategories = [...categories];
 
     let akimboSelected = false;
 
     // Keep selecting attachments until we have the required number or run out of categories
-    while (Object.keys(selectedAttachments).length < attachmentCount && availableCategories.length > 0) {
+    while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
         // Randomly select a category
         const randomIndex = Math.floor(Math.random() * availableCategories.length);
         const category = availableCategories[randomIndex];
@@ -637,15 +643,15 @@ function selectSecondaryAttachments(weapon, attachmentCount) {
         const attachment = getRandomItem(attachmentsInCategory);
 
         // Add the attachment to selectedAttachments
-        selectedAttachments[category] = attachment;
+        chosen[category] = attachment;
 
         // If 'Stock' and 'Akimbo' is selected, set akimboSelected to true
         if (category === 'Stock' && attachment.includes('Akimbo')) {
             akimboSelected = true;
 
             // If 'Optic' is already selected, remove it
-            if (selectedAttachments['Optic']) {
-                delete selectedAttachments['Optic'];
+            if (chosen['Optic']) {
+                delete chosen['Optic'];
             }
 
             // Remove 'Optic' from availableCategories
@@ -659,13 +665,29 @@ function selectSecondaryAttachments(weapon, attachmentCount) {
         availableCategories.splice(randomIndex, 1);
     }
 
-    // Convert selectedAttachments to an array of strings
-    let attachmentList = [];
-    for (let category in selectedAttachments) {
-        attachmentList.push(`${category}: ${selectedAttachments[category]}`);
+    // Reorder according to original category order
+    let selectedAttachments = [];
+    for (let cat of categories) {
+        if (chosen[cat]) {
+            selectedAttachments.push(`${cat}: ${chosen[cat]}`);
+        }
     }
 
-    return attachmentList;
+    return selectedAttachments;
+}
+
+function getWeightedMelee(meleeArray) {
+    let weightedMelee = [];
+    for (let weapon of meleeArray) {
+        if (weapon.name === "Knife") {
+            for (let i = 0; i < 5; i++) {
+                weightedMelee.push(weapon);
+            }
+        } else {
+            weightedMelee.push(weapon);
+        }
+    }
+    return weightedMelee;
 }
 
 
@@ -835,7 +857,8 @@ function generateClass() {
     }
 
     // Select a melee weapon
-    const meleeWeapon = getRandomItem(availableMeleeWeapons)
+    const weightedMeleeWeapons = getWeightedMelee(availableMeleeWeapons);
+    const meleeWeapon = getRandomItem(weightedMeleeWeapons);
 
     // Select lethal and tactical equipment
     const lethal = getRandomItem(availableLethalEquipment);
