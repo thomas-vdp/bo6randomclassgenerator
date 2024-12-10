@@ -19,7 +19,7 @@ document.getElementById('submitBtn').addEventListener('click', function(event) {
             // Reset the form
             form.reset();
             // Redirect to thank you page
-            window.location.href = 'thankyou.html';
+            window.location.href = './thankyou';
         } else {
             // Handle errors
             if (responseData.errors) {
