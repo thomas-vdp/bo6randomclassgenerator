@@ -233,7 +233,7 @@ const primaryWeapons = [
             Underbarrel: ["Weighted Foregrip", "Lightweight Foregrip", "Precision Foregrip", "Ranger Foregrip"],
             Stock: ["Infiltrator Stock", "Quickdraw Stock", "Agility Stock", "Ergonomic Stock", "Combat Stock", "Balanced Stock", "Light Stock"],
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
-            "Fire Mods": ["Rapid Fire", "12 Gauge Slug"]
+            "Fire Mods": ["Rapid Fire", "12 Gauge Slug", "12 Gauge Dragon's Breath"]
         },
         unlockLevel: 1
     },
@@ -248,7 +248,7 @@ const primaryWeapons = [
             "Rear Grip": ["Quickdraw Grip", "Assault Grip", "Commando Grip", "Ergonomic Grip", "CQB Grip"],
             Stock: ["Light Stock", "Infiltrator Stock", "Heavy Stock", "Balanced Stock", "Combat Stock"],
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
-            "Fire Mods": ["Rapid Fire", "12 Gauge Slug", "Recoil Springs"]
+            "Fire Mods": ["Rapid Fire", "12 Gauge Slug", "Recoil Springs", "12 Gauge Dragon's Breath"]
         },
         unlockLevel: 31
     },
@@ -463,7 +463,17 @@ const secondaryWeapons = [
         unlockLevel: 40
     },
     { name: "CIGMA 2B", unlockLevel: 1 },
-    { name: "HE-1", unlockLevel: 19 }
+    { name: "HE-1", unlockLevel: 19 },
+    { 
+        name: "Sirin 9mm",
+        attachments: {
+            Optic: ["Carry Handle Sight", "Iron Sight"],
+            Muzzle: ["Suppressor"],
+            Barrel: ["Long Barrel"],
+            Underbarrel: ["Lightweight Foregrip", "Vertical Foregrip"],
+            Magazine: ["Extended Mag I", "Fast Mag I"]
+        }
+    }
 ];
 
 // Melee Weapons
@@ -565,6 +575,7 @@ const scorestreaks = [
     { name: "Counter UAV", unlockLevel: 17 },
     { name: "Care Package", unlockLevel: 24 },
     { name: "Napalm Strike", unlockLevel: 30 },
+    { name: "Hand Cannon", unlockLevel: 1 },
     { name: "LDBR", unlockLevel: 21 },
     { name: "Sentry Turret", unlockLevel: 12 },
     { name: "Hellstorm", unlockLevel: 9 },
@@ -597,6 +608,7 @@ function selectAttachments(weapon, attachmentCount) {
     let chosen = {};
     let availableCategories = [...categories];
 
+    // Select attachments until we have enough or run out of categories
     while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
         // Select a random category
         const randomIndex = Math.floor(Math.random() * availableCategories.length);
@@ -608,6 +620,35 @@ function selectAttachments(weapon, attachmentCount) {
         availableCategories.splice(randomIndex, 1);
     }
 
+    // After choosing attachments, check for Slug in Fire Mods
+    if (chosen["Fire Mods"] && chosen["Fire Mods"].includes("Slug")) {
+        if (chosen["Muzzle"] && chosen["Muzzle"].includes("Modified")) {
+            // Pick another Muzzle, replacing the Modified Choke muzzle attachment
+            const muzzleChoices = weapon.attachments["Muzzle"];
+            const alternativeMuzzles = muzzleChoices.filter(m => !m.includes("Modified Choke"));
+            const newMuzzle = getRandomItem(alternativeMuzzles);
+            chosen["Muzzle"] = newMuzzle;
+        }
+    }
+
+    // After choosing attachments, check for Dragon's Breath in Fire Mods
+    if (chosen["Fire Mods"] && chosen["Fire Mods"].includes("Dragon's Breath")) {
+        // If Barrel is chosen, remove it
+        if (chosen["Barrel"]) {
+            delete chosen["Barrel"];
+
+            while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
+                const randomIndex = Math.floor(Math.random() * availableCategories.length);
+                const newCategory = availableCategories[randomIndex];
+                const attachmentsInCategory = weapon.attachments[newCategory];
+                const newAttachment = getRandomItem(attachmentsInCategory);
+                chosen[newCategory] = newAttachment;
+                availableCategories.splice(randomIndex, 1);
+            }
+        }
+    }
+
+    // Reorder attachments according to the original category order
     let selectedAttachments = [];
     for (let cat of categories) {
         if (chosen[cat]) {
@@ -623,20 +664,11 @@ function selectSecondaryAttachments(weapon, attachmentCount) {
     let chosen = {};
     let availableCategories = [...categories];
 
-    let akimboSelected = false;
-
     // Keep selecting attachments until we have the required number or run out of categories
     while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
         // Randomly select a category
         const randomIndex = Math.floor(Math.random() * availableCategories.length);
         const category = availableCategories[randomIndex];
-
-        // If 'Optic' category and 'Akimbo' is selected, skip 'Optic'
-        if (category === 'Optic' && akimboSelected) {
-            // Remove 'Optic' from availableCategories
-            availableCategories.splice(randomIndex, 1);
-            continue;
-        }
 
         // Select a random attachment from the category
         const attachmentsInCategory = weapon.attachments[category];
@@ -645,24 +677,47 @@ function selectSecondaryAttachments(weapon, attachmentCount) {
         // Add the attachment to selectedAttachments
         chosen[category] = attachment;
 
-        // If 'Stock' and 'Akimbo' is selected, set akimboSelected to true
-        if (category === 'Stock' && attachment.includes('Akimbo')) {
-            akimboSelected = true;
-
-            // If 'Optic' is already selected, remove it
-            if (chosen['Optic']) {
-                delete chosen['Optic'];
-            }
-
-            // Remove 'Optic' from availableCategories
-            const opticIndex = availableCategories.indexOf('Optic');
-            if (opticIndex !== -1) {
-                availableCategories.splice(opticIndex, 1);
-            }
-        }
-
         // Remove the category from availableCategories
         availableCategories.splice(randomIndex, 1);
+    }
+
+    // After choosing attachments, check for 'Akimbo' in Stock
+    if (chosen["Stock"] && chosen["Stock"].includes("Akimbo")) {
+        // Pick a different Laser if an incompatible one is chosen
+        if (chosen["Laser"]) {
+            const allowedLasers = ["Steady Aim Laser", "Fast Motion Laser"];
+            const currentLaser = chosen["Laser"];
+            if (!allowedLasers.includes(currentLaser)) {
+                // Try to pick a valid one from allowed lasers if available in the weapon's Laser category
+                const weaponLasers = weapon.attachments['Laser'].filter(laser => allowedLasers.includes(laser));
+                if (weaponLasers.length > 0) {
+                    // Pick a new allowed laser
+                    chosen['Laser'] = getRandomItem(weaponLasers);
+                } else {
+                    // No allowed laser available, remove the Laser attachment
+                    delete chosen['Laser'];
+                }
+            }
+        }
+        // Remove Optic if chosen
+        if (chosen['Optic']) {
+            delete chosen['Optic'];
+        }
+
+        // Remove Underbarrel if chosen
+        if (chosen['Underbarrel']) {
+            delete chosen['Underbarrel'];
+        }
+
+        // Choose attachments if available again
+        while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
+            const randomIndex = Math.floor(Math.random() * availableCategories.length);
+            const newCategory = availableCategories[randomIndex];
+            const attachmentsInCategory = weapon.attachments[newCategory];
+            const newAttachment = getRandomItem(attachmentsInCategory);
+            chosen[newCategory] = newAttachment;
+            availableCategories.splice(randomIndex, 1);
+        }
     }
 
     // Reorder according to original category order
@@ -938,3 +993,85 @@ function closeSidebarFunc() {
 newsButton.addEventListener('click', openSidebar);
 closeSidebar.addEventListener('click', closeSidebarFunc);
 sidebarOverlay.addEventListener('click', closeSidebarFunc);
+
+// Build a unified array of unlockable items (same as before)
+const unlockableItems = [];
+
+primaryWeapons.forEach(w => unlockableItems.push(w.name));
+secondaryWeapons.forEach(w => unlockableItems.push(w.name));
+meleeWeapons.forEach(w => unlockableItems.push(w.name));
+perks1.forEach(p => unlockableItems.push(p.name));
+perks2.forEach(p => unlockableItems.push(p.name));
+perks3.forEach(p => unlockableItems.push(p.name));
+lethalEquipment.forEach(l => unlockableItems.push(l.name));
+tacticalEquipment.forEach(t => unlockableItems.push(t.name));
+fieldUpgrades.forEach(f => unlockableItems.push(f.name));
+wildcards.forEach(w => unlockableItems.push(w.name));
+scorestreaks.forEach(s => unlockableItems.push(s.name));
+
+const uniqueUnlockableItems = [...new Set(unlockableItems)];
+
+const permanentUnlocksInput = document.getElementById('permanentUnlocks');
+const suggestionsDiv = document.getElementById('suggestions');
+
+permanentUnlocksInput.addEventListener('input', () => {
+    const originalValue = permanentUnlocksInput.value;
+    const trimmedValue = originalValue.trim();
+
+    if (!trimmedValue) {
+        suggestionsDiv.style.display = 'none';
+        suggestionsDiv.innerHTML = '';
+        return;
+    }
+
+    let parts = trimmedValue.split(',').map(p => p.trim()).filter(p => p);
+    let lastPart = parts.length > 0 ? parts[parts.length - 1] : '';
+
+    if (!lastPart) {
+        suggestionsDiv.style.display = 'none';
+        suggestionsDiv.innerHTML = '';
+        return;
+    }
+
+    const lastPartLower = lastPart.toLowerCase();
+    const matches = uniqueUnlockableItems.filter(item => item.toLowerCase().includes(lastPartLower));
+
+    matches.sort((a, b) => {
+        const aLower = a.toLowerCase();
+        const bLower = b.toLowerCase();
+        const aStarts = aLower.startsWith(lastPartLower);
+        const bStarts = bLower.startsWith(lastPartLower);
+        if (aStarts && !bStarts) return -1;
+        if (bStarts && !aStarts) return 1;
+        return aLower.localeCompare(bLower);
+    });
+
+    if (matches.length === 0) {
+        suggestionsDiv.style.display = 'none';
+        suggestionsDiv.innerHTML = '';
+        return;
+    }
+
+    // Create suggestion items with classes for hover effect
+    suggestionsDiv.innerHTML = matches.map(match => `<div class="suggestion-item">${match}</div>`).join('');
+    suggestionsDiv.style.display = 'block';
+
+    // Add click event to suggestions
+    Array.from(suggestionsDiv.querySelectorAll('.suggestion-item')).forEach(itemDiv => {
+        itemDiv.addEventListener('click', () => {
+            const chosenItem = itemDiv.textContent;
+            parts[parts.length - 1] = chosenItem;
+            permanentUnlocksInput.value = parts.join(', ') + ', ';
+            suggestionsDiv.style.display = 'none';
+            suggestionsDiv.innerHTML = '';
+            permanentUnlocksInput.focus();
+        });
+    });
+});
+
+// Hide suggestions on click outside
+document.addEventListener('click', (e) => {
+    if (!suggestionsDiv.contains(e.target) && e.target !== permanentUnlocksInput) {
+        suggestionsDiv.style.display = 'none';
+    }
+});
