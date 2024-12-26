@@ -51,13 +51,14 @@
         <div class="sidebar-content">
             <h3>Upcoming Features</h3>
             <ul>
-                <li>Exclude weapon classes</li>
-                <li>Accessibility features</li>
+                <li>Image mode!</li>
                 <li>Share with your friends</li>
+                <li>Accessibility features</li>
             </ul>
             <hr class="sidebar-divider">
             <h3>Changelog</h3>
             <ul>
+                <li>December 26, 2024: Added the option to exclude one or more weapon classes</li>
                 <li>December 10, 2024: Hit List event and Battle Pass items added and SEO bug fixes</li>
                 <li>December 7, 2024: Small bug fixes</li>
                 <li>November 27, 2024: v2.0 is deployed with new styling and season 1 weapons.</li>
@@ -80,7 +81,7 @@
         <!-- Buttons -->
         <div class="button-container">
             <button id="generateBtn" class="btn">Generate Random Class</button>
-            <button id="settingsBtn" class="btn"><i class="fas fa-cog"></i></button>
+            <button id="settingsBtn" class="btn" aria-label="Settings" title="Settings"><i class="fas fa-cog"></i></button>
         </div>
         <!-- Advanced Settings Menu -->
         <div id="advancedSettings" class="hidden">
@@ -97,10 +98,6 @@
                     <label for="considerPlayerLevel">Consider Player Level</label>
                 </div>
                 <div id="playerLevelFields" class="nested-form-group hidden">
-                    <div class="form-group">
-                        <label for="prestigeLevel">Prestige Level:</label>
-                        <input type="number" id="prestigeLevel" name="prestigeLevel" min="0" max="10">
-                    </div>
                     <div class="form-group">
                         <label for="playerLevel">Player Level:</label>
                         <input type="number" id="playerLevel" name="playerLevel" min="1" max="55">
@@ -130,6 +127,32 @@
                                 z-index: 999999;
                             "></div>
                         </div>                        
+                    </div>
+                </div>
+                <!-- Exclude weapon class -->
+                <div class="form-group">
+                    <input type="checkbox" id="excludeWeaponClass" name="excludeWeaponClass">
+                    <label for="excludeWeaponClass">Exclude Weapon Class</label>
+                </div>
+                <div id="excludeWeaponClassField" class="nested-form-group hidden">
+                    <div class="form-group">
+                        <label for="weaponClass">Exclude following weapon classes (comma-separated):</label>
+                        <div style="position: relative;">
+                            <input type="text" id="weaponClass" name="weaponClass" placeholder="e.g., AR, Launcher">
+                            <div id="weaponSuggestions" style="
+                                position: absolute; 
+                                top: 100%; 
+                                left: 0; 
+                                right: 0; 
+                                background: #2a2a2a; 
+                                border: 1px solid #555; 
+                                border-radius: 5px; 
+                                display: none; 
+                                max-height: 165px; 
+                                overflow-y: auto;
+                                z-index: 999999;
+                            "></div>
+                        </div>
                     </div>
                 </div>
             </form>

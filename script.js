@@ -13,7 +13,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.56 NATO Overpressured", "Recoil Springs", "5.56 NATO FMJ"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "AR"
     },
     {
         name: "AK-74",
@@ -28,7 +29,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.45x39mm Overpressured", "Recoil Springs", "5.45x39mm FMJ"]
         },
-        unlockLevel: 10
+        unlockLevel: 10,
+        class: "AR"
     },
     {
         name: "AMES 85",
@@ -43,7 +45,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.56 NATO Overpressured", "Recoil Springs", "5.56 NATO FMJ"]
         },
-        unlockLevel: 19
+        unlockLevel: 19,
+        class: "AR"
     },
     {
         name: "GPR 91",
@@ -58,7 +61,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.56 NATO Overpressured", "Recoil Springs", "5.56 NATO FMJ"]
         },
-        unlockLevel: 28
+        unlockLevel: 28,
+        class: "AR"
     },
     {
         name: "MODEL L",
@@ -73,7 +77,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.56 NATO Overpressured", "Recoil Springs", "5.56 NATO FMJ"]
         },
-        unlockLevel: 40
+        unlockLevel: 40,
+        class: "AR"
     },
     {
         name: "GOBLIN MK2",
@@ -88,7 +93,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62 NATO Overpressured", "Recoil Springs", "7.62 NATO FMJ"]
         },
-        unlockLevel: 46
+        unlockLevel: 46,
+        class: "AR"
     },
     {
         name: "AS VAL",
@@ -102,7 +108,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x39mm Soviet Overpressured", "Recoil Springs", "9x39mm Soviet FMJ"]
         },
-        unlockLevel: 55
+        unlockLevel: 55,
+        class: "AR"
     },
     {
         name: "KRIG C",
@@ -117,7 +124,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.56 NATO Overpressured", "Recoil Springs", "5.56 NATO FMJ"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "AR"
     },
     {
         name: "C9",
@@ -132,7 +140,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x19mm Parabellum Overpressured", "Recoil Springs", "9mm Parabellum FMJ"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "SMG"
     },
     {
         name: "KSV",
@@ -147,7 +156,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x39mm Soviet Overpressured", "Recoil Springs", "9x39mm Soviet FMJ"]
         },
-        unlockLevel: 7
+        unlockLevel: 7,
+        class: "SMG"
     },
     {
         name: "TANTO .22",
@@ -162,7 +172,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", ".22 WMR Overpressured", "Recoil Springs", ".22 WMR FMJ"]
         },
-        unlockLevel: 16
+        unlockLevel: 16,
+        class: "SMG"
     },
     {
         name: "PP-919",
@@ -177,7 +188,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x18mm Makarov Overpressured", "Recoil Springs", "9x18mm Makarov FMJ"]
         },
-        unlockLevel: 37
+        unlockLevel: 37,
+        class: "SMG"
     },
     {
         name: "JACKAL PDW",
@@ -192,7 +204,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x18mm Makarov Overpressured", "Recoil Springs", "9x18mm Makarov FMJ"]
         },
-        unlockLevel: 43
+        unlockLevel: 43,
+        class: "SMG"
     },
     {
         name: "KOMPAKT 92",
@@ -207,7 +220,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x19mm Parabellum Overpressured", "Recoil Springs", "9mm Parabellum FMJ"]
         },
-        unlockLevel: 49
+        unlockLevel: 49,
+        class: "SMG"
     },
     {
         name: "SAUG",
@@ -222,7 +236,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x19mm Parabellum Overpressured", "Recoil Springs", "9mm Parabellum FMJ"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "SMG"
     },
     {
         name: "Marine SP",
@@ -235,7 +250,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "12 Gauge Slug", "12 Gauge Dragon's Breath"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "Shotgun"
     },
     {
         name: "ASG-89",
@@ -250,7 +266,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "12 Gauge Slug", "Recoil Springs", "12 Gauge Dragon's Breath"]
         },
-        unlockLevel: 31
+        unlockLevel: 31,
+        class: "Shotgun"
     },
     {
         name: "PU-21",
@@ -265,7 +282,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.45x39mm Overpressured", "Recoil Springs", "5.45x39mm FMJ"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "LMG"
     },
     {
         name: "XMG",
@@ -280,7 +298,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62 NATO Overpressured", "Recoil Springs", "7.62 NATO FMJ"]
         },
-        unlockLevel: 13
+        unlockLevel: 13,
+        class: "LMG"
     },
     {
         name: "GPMG-7",
@@ -295,7 +314,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62 NATO Overpressured", "Recoil Springs", "7.62 NATO FMJ"]
         },
-        unlockLevel: 52
+        unlockLevel: 52,
+        class: "LMG"
     },
     {
         name: "SWAT 5.56",
@@ -310,7 +330,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "5.56 NATO Overpressured", "Recoil Springs", "5.56 NATO FMJ"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "Marksman Rifle"
     },
     {
         name: "Tsarkov 7.62",
@@ -325,7 +346,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62x54mmR Overpressured", "Recoil Springs", "7.62x54mmR FMJ"]
         },
-        unlockLevel: 22
+        unlockLevel: 22,
+        class: "Marksman Rifle"
     },
     {
         name: "AEK-973",
@@ -340,7 +362,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62x39mm Overpressured", "Recoil Springs", "7.62x39mm FMJ"]
         },
-        unlockLevel: 34
+        unlockLevel: 34,
+        class: "Marksman Rifle"
     },
     {
         name: "DM-10",
@@ -355,7 +378,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62 NATO Overpressured", "Recoil Springs", "7.62 NATO FMJ"]
         },
-        unlockLevel: 43
+        unlockLevel: 43,
+        class: "Marksman Rifle"
     },
     {
         name: "LW3A1 Frostline",
@@ -370,7 +394,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62 NATO Overpressured", "7.62 NATO FMJ"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "Sniper Rifle"
     },
     {
         name: "SVD",
@@ -385,7 +410,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62x54mmR Overpressured", "Recoil Springs", "7.62x54mmR FMJ"]
         },
-        unlockLevel: 25
+        unlockLevel: 25,
+        class: "Sniper Rifle"
     },
     {
         name: "LR 7.62",
@@ -400,7 +426,8 @@ const primaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "7.62 NATO Overpressured", "7.62 NATO FMJ"]
         },
-        unlockLevel: 49
+        unlockLevel: 49,
+        class: "Sniper Rifle"
     }
 ];
 
@@ -418,7 +445,8 @@ const secondaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x18mm Makarov Overpressured", "Recoil Springs", "9x18mm Makarov FMJ"]
         },
-        unlockLevel: 1
+        unlockLevel: 1,
+        class: "Pistol"
     },
     {
         name: "Grekhova",
@@ -432,7 +460,8 @@ const secondaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", "9x18mm Makarov Overpressured", "Recoil Springs", "9x18mm Makarov FMJ"]
         },
-        unlockLevel: 13
+        unlockLevel: 13,
+        class: "Pistol"
     },
     {
         name: "GS45",
@@ -446,7 +475,8 @@ const secondaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", ".45 ACP Overpressured", "Recoil Springs", ".45 ACP FMJ"]
         },
-        unlockLevel: 28
+        unlockLevel: 28,
+        class: "Pistol"
     },
     {
         name: "Stryder .22",
@@ -460,10 +490,11 @@ const secondaryWeapons = [
             Laser: ["Steady Aim Laser", "Fast Motion Laser", "Tactical Laser", "Strelok Laser", "Target Laser"],
             "Fire Mods": ["Rapid Fire", ".22 WMR Overpressured", "Recoil Springs", ".22 WMR FMJ"]
         },
-        unlockLevel: 40
+        unlockLevel: 40,
+        class: "Pistol"
     },
-    { name: "CIGMA 2B", unlockLevel: 1 },
-    { name: "HE-1", unlockLevel: 19 },
+    { name: "CIGMA 2B", unlockLevel: 1, class: "Launcher" },
+    { name: "HE-1", unlockLevel: 19, class: "Launcher" },
     { 
         name: "Sirin 9mm",
         attachments: {
@@ -472,7 +503,9 @@ const secondaryWeapons = [
             Barrel: ["Long Barrel"],
             Underbarrel: ["Lightweight Foregrip", "Vertical Foregrip"],
             Magazine: ["Extended Mag I", "Fast Mag I"]
-        }
+        },
+        unlockLevel: 1,
+        class: "Special"
     }
 ];
 
@@ -648,6 +681,40 @@ function selectAttachments(weapon, attachmentCount) {
         }
     }
 
+    // After choosing attachments, check for 'Tactical Laser' in Laser
+    if (chosen["Laser"] && chosen["Laser"].includes("Tactical")) {
+        // Remove Optic and choose a new attachment
+        if (chosen['Optic']) {
+            delete chosen["Optic"]
+        }
+
+        while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
+            const randomIndex = Math.floor(Math.random() * availableCategories.length);
+            const newCategory = availableCategories[randomIndex];
+            const attachmentsInCategory = weapon.attachments[newCategory];
+            const newAttachment = getRandomItem(attachmentsInCategory);
+            chosen[newCategory] = newAttachment;
+            availableCategories.splice(randomIndex, 1);
+        }
+    }
+
+    // After choosing attachments, check for 'Crossbar' in Underbarrel
+    if (chosen["Underbarrel"] && chosen["Underbarrel"].includes("Crossbar")) {
+        // Remove Optic and choose a new attachment
+        if (chosen["Optic"]) {
+            delete chosen["Optic"]
+        }
+
+        while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
+            const randomIndex = Math.floor(Math.random() * availableCategories.length);
+            const newCategory = availableCategories[randomIndex];
+            const attachmentsInCategory = weapon.attachments[newCategory];
+            const newAttachment = getRandomItem(attachmentsInCategory);
+            chosen[newCategory] = newAttachment;
+            availableCategories.splice(randomIndex, 1);
+        }
+    }
+
     // Reorder attachments according to the original category order
     let selectedAttachments = [];
     for (let cat of categories) {
@@ -679,6 +746,23 @@ function selectSecondaryAttachments(weapon, attachmentCount) {
 
         // Remove the category from availableCategories
         availableCategories.splice(randomIndex, 1);
+    }
+
+    // After choosing attachments, check for 'Tactical Laser' in Laser
+    if (chosen["Laser"] && chosen["Laser"].includes("Tactical")) {
+        // Remove Optic and choose a new attachment
+        if (chosen['Optic']) {
+            delete chosen["Optic"]
+        }
+
+        while (Object.keys(chosen).length < attachmentCount && availableCategories.length > 0) {
+            const randomIndex = Math.floor(Math.random() * availableCategories.length);
+            const newCategory = availableCategories[randomIndex];
+            const attachmentsInCategory = weapon.attachments[newCategory];
+            const newAttachment = getRandomItem(attachmentsInCategory);
+            chosen[newCategory] = newAttachment;
+            availableCategories.splice(randomIndex, 1);
+        }
     }
 
     // After choosing attachments, check for 'Akimbo' in Stock
@@ -745,7 +829,6 @@ function getWeightedMelee(meleeArray) {
     return weightedMelee;
 }
 
-
 // Event Listeners and DOM Manipulation
 document.getElementById('settingsBtn').addEventListener('click', function() {
     const settingsMenu = document.getElementById('advancedSettings');
@@ -771,19 +854,29 @@ document.getElementById('considerPermanentUnlocks').addEventListener('change', f
     }
 });
 
+// Show/Hide Exclude Weapon Class Field
+document.getElementById('excludeWeaponClass').addEventListener('change', function() {
+    const excludeWeaponClassField = document.getElementById('excludeWeaponClassField');
+    if (this.checked) {
+        excludeWeaponClassField.classList.remove('hidden');
+    } else {
+        excludeWeaponClassField.classList.add('hidden');
+    }
+})
+
 // Main Function to Generate Class
 function generateClass() {
     // Get Advanced Settings
     const includeScorestreaks = document.getElementById('includeScorestreaks').checked;
     const considerPlayerLevel = document.getElementById('considerPlayerLevel').checked;
     const considerPermanentUnlocks = document.getElementById('considerPermanentUnlocks').checked;
+    const excludeWeaponClasses = document.getElementById('excludeWeaponClass').checked;
 
-    let prestigeLevel = 0;
     let playerLevel = 1;
     let permanentUnlocks = [];
+    let weaponClasses = [];
 
     if (considerPlayerLevel) {
-        prestigeLevel = parseInt(document.getElementById('prestigeLevel').value) || 0;
         playerLevel = parseInt(document.getElementById('playerLevel').value) || 1;
     }
 
@@ -791,6 +884,13 @@ function generateClass() {
         const unlocksInput = document.getElementById('permanentUnlocks').value;
         if (unlocksInput.trim() !== "") {
             permanentUnlocks = unlocksInput.split(',').map(item => item.trim());
+        }
+    }
+
+    if (excludeWeaponClasses) {
+        const weaponClassesInput = document.getElementById('weaponClass').value;
+        if (weaponClassesInput.trim() !== "") {
+            weaponClasses = weaponClassesInput.split(',').map(item => item.trim());
         }
     }
 
@@ -806,6 +906,14 @@ function generateClass() {
     let availablePerks2 = perks2;
     let availablePerks3 = perks3;
     let availableScorestreaks = scorestreaks;
+
+    // Filter items based on exclusion of classes
+    if (excludeWeaponClasses) {
+        const isExcludedClass = (item) => weaponClasses.includes(item.class);
+
+        availablePrimaryWeapons = availablePrimaryWeapons.filter(item => !isExcludedClass(item));
+        availableSecondaryWeapons = availableSecondaryWeapons.filter(item => !isExcludedClass(item));
+    }
 
     // Filter items based on player level and permanent unlocks
     if (considerPlayerLevel) {
@@ -947,6 +1055,12 @@ function generateClass() {
         selectedScorestreaks = getRandomItems(availableScorestreaks, 3).map(
             (item) => item.name
         );
+
+        // Sort the selected scorestreaks based on their order in the original list
+        const scorestreakOrder = scorestreaks.map((streak) => streak.name);
+        selectedScorestreaks.sort(
+            (a, b) => scorestreakOrder.indexOf(a) - scorestreakOrder.indexOf(b)
+        );
     }
 
     // Display the generated class
@@ -994,7 +1108,7 @@ newsButton.addEventListener('click', openSidebar);
 closeSidebar.addEventListener('click', closeSidebarFunc);
 sidebarOverlay.addEventListener('click', closeSidebarFunc);
 
-// Build a unified array of unlockable items (same as before)
+// Build a unified array of unlockable items
 const unlockableItems = [];
 
 primaryWeapons.forEach(w => unlockableItems.push(w.name));
@@ -1073,5 +1187,73 @@ permanentUnlocksInput.addEventListener('input', () => {
 document.addEventListener('click', (e) => {
     if (!suggestionsDiv.contains(e.target) && e.target !== permanentUnlocksInput) {
         suggestionsDiv.style.display = 'none';
+    }
+});
+
+// Build an array of weapon classes (same as before)
+const weaponClasses = ["AR", "SMG", "Shotgun", "LMG", "Marksman Rifle", "Sniper Rifle", "Pistol", "Launcher", "Special"];
+
+const weaponClassInput = document.getElementById('weaponClass');
+const weaponSuggestionsDiv = document.getElementById('weaponSuggestions');
+
+weaponClassInput.addEventListener('input', () => {
+    const originalValue = weaponClassInput.value;
+    const trimmedValue = originalValue.trim();
+
+    if (!trimmedValue) {
+        weaponSuggestionsDiv.style.display = 'none';
+        weaponSuggestionsDiv.innerHTML = '';
+        return;
+    }
+
+    let parts = trimmedValue.split(',').map(p => p.trim()).filter(p => p);
+    let lastPart = parts.length > 0 ? parts[parts.length - 1] : '';
+
+    if (!lastPart) {
+        weaponSuggestionsDiv.style.display = 'none';
+        weaponSuggestionsDiv.innerHTML = '';
+        return;
+    }
+
+    const lastPartLower = lastPart.toLowerCase();
+    const matches = weaponClasses.filter(item => item.toLowerCase().includes(lastPartLower));
+
+    matches.sort((a, b) => {
+        const aLower = a.toLowerCase();
+        const bLower = b.toLowerCase();
+        const aStarts = aLower.startsWith(lastPartLower);
+        const bStarts = bLower.startsWith(lastPartLower);
+        if (aStarts && !bStarts) return -1;
+        if (bStarts && !aStarts) return 1;
+        return aLower.localeCompare(bLower);
+    });
+
+    if (matches.length === 0) {
+        weaponSuggestionsDiv.style.display = 'none';
+        weaponSuggestionsDiv.innerHTML = '';
+        return;
+    }
+
+    // Create suggestion items with classes for hover effect
+    weaponSuggestionsDiv.innerHTML = matches.map(match => `<div class="suggestion-item">${match}</div>`).join('');
+    weaponSuggestionsDiv.style.display = 'block';
+
+    // Add click event to suggestions
+    Array.from(weaponSuggestionsDiv.querySelectorAll('.suggestion-item')).forEach(itemDiv => {
+        itemDiv.addEventListener('click', () => {
+            const chosenItem = itemDiv.textContent;
+            parts[parts.length - 1] = chosenItem;
+            weaponClassInput.value = parts.join(', ') + ', ';
+            weaponSuggestionsDiv.style.display = 'none';
+            weaponSuggestionsDiv.innerHTML = '';
+            weaponClassInput.focus();
+        });
+    });
+});
+
+// Hide suggestions on click outside
+document.addEventListener('click', (e) => {
+    if (!weaponSuggestionsDiv.contains(e.target) && e.target !== weaponClassInput) {
+        weaponSuggestionsDiv.style.display = 'none';
     }
 });
