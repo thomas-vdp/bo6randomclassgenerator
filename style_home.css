@@ -283,6 +283,10 @@ main p {
     margin-bottom: 20px;
 }
 
+main p .fas.fa-cog {
+    font-size: 18px
+}
+
 .section-heading {
     font-family: var(--heading-font);
     color: var(--accent-color);
@@ -366,7 +370,7 @@ main p {
     border: none;
     color: var(--secondary-color);
     cursor: pointer;
-    font-size: 32px;
+    font-size: 40px;
     transition: color 0.3s ease;
     padding: 0;
 }
